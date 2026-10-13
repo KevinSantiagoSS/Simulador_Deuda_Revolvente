@@ -19,16 +19,10 @@ app.post('/api/card-info', async (req, res) => {
     return res.status(400).json({ error: 'Falta el nombre de la tarjeta' });
   }
 
-  const prompt = `Eres un analista financiero especializado en tarjetas de crédito en México.
-Busca en la web información actualizada y oficial sobre: "${query}".
-
-Necesito extraer:
-1. CAT (Costo Anual Total) promedio sin IVA, expresado en porcentaje anual. Ejemplo: 85.1
-2. Porcentaje de pago mínimo mensual estipulado. Ejemplo: 1.25, 2.0, 5.0. Si no lo encuentras explícito, usa 5.0
-3. Nombre oficial de la tarjeta y el banco.
-
-Responde ÚNICAMENTE con un objeto JSON válido, sin texto adicional, sin markdown y sin bloques de código:
-{"cat": 85.1, "pago_minimo": 5.0, "nombre": "Banco - Nombre de la tarjeta"}`;
+  const prompt = `Eres un analista financiero experto en tarjetas de crédito en México.
+Con tu conocimiento general, proporciona una estimación del CAT y el pago mínimo para: "${query}".
+Si no estás seguro, usa 5.0 para el pago mínimo.
+Responde solo con JSON: {"cat": 85.1, "pago_minimo": 5.0, "nombre": "Banco - Tarjeta"}`;
 
   try {
     const url = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${API_KEY}`;
