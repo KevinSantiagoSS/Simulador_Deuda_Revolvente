@@ -7,7 +7,7 @@ app.use(express.json());
 
 const API_KEY = process.env.GEMINI_API_KEY;
 // Modelo actual con soporte de grounding (búsqueda web)
-const MODEL = 'gemini-2.5-flash'; 
+const MODEL = 'gemini-3.8-flash'; 
 
 if (!API_KEY) {
   console.warn('⚠️  Falta GEMINI_API_KEY en las variables de entorno');
