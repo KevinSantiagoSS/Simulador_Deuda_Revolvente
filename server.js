@@ -32,7 +32,7 @@ Responde solo con JSON: {"cat": 85.1, "pago_minimo": 5.0, "nombre": "Banco - Tar
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         contents: [{ parts: [{ text: prompt }] }],
-        tools: [{ google_search: {} }], // 🔍 Grounding con Búsqueda de Google
+        // tools: [{ google_search: {} }], // 🔍 Grounding con Búsqueda de Google
         generationConfig: { temperature: 0.2 }
       })
     });
