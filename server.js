@@ -7,7 +7,7 @@ app.use(express.json());
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 const SERPER_API_KEY = process.env.SERPER_API_KEY; // Nueva variable
-const MODEL = 'gemini-3.8-flash';
+const MODEL = 'gemini-1.5-flash';
 
 // Caché en memoria para no gastar las 2500 búsquedas de golpe
 const cache = new Map();
