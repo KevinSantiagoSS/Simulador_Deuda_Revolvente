@@ -75,7 +75,11 @@ Si no encuentras datos claros, asigna cat: 85.0 y pago_minimo: 5.0.`;
 
     // --- LÓGICA DE REINTENTO CON MÚLTIPLES MODELOS ---
     // Si un modelo falla, intenta con el siguiente
-    const modelos = ['gemini-1.5-flash', 'gemini-2.0-flash', 'gemini-3.8-flash'];
+    const modelos = [
+      'gemini-3.8-flash',     // El modelo principal y más reciente
+      'gemini-flash-latest',  // Alias que siempre apunta al último Flash
+      'gemini-3.5-flash-lite' // Opción más ligera como último recurso
+    ];
     let geminiData = null;
     let ultimoError = null;
 
